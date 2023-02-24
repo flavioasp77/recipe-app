@@ -25,4 +25,10 @@ public class RecipeController {
         recipe.setCreationDate(new Date());
         return recipeRepository.save(recipe);
     }
+
+    @PutMapping(value = "/updateRecipe/{id}")
+    public Recipe updateRecipe(@PathVariable("id") Long id, @RequestBody Recipe recipe) {
+        recipe.setId(id);
+        return recipeRepository.save(recipe);
+    }
 }

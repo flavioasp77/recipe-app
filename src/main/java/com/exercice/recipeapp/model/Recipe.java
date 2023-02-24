@@ -30,6 +30,7 @@ public class Recipe {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
+    @Column(name = "creation_date", updatable = false)
     @Temporal(TemporalType.DATE)
     private Date creationDate;
 
@@ -45,7 +46,8 @@ public class Recipe {
     private Category category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @Column(name="methodOfPreparation", length = 3000, nullable = false)
+    @Lob
+    @Column(name="method_of_preparation", nullable = false)
     private String methodOfPreparation;
 
     public Recipe(long id, Date creationDate, String title) {
