@@ -18,7 +18,7 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private long id;
+    private Long id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @Column(name="title", length = 100, nullable = false)
@@ -50,7 +50,7 @@ public class Recipe {
     @Column(name="method_of_preparation", nullable = false)
     private String methodOfPreparation;
 
-    public Recipe(long id, Date creationDate, String title) {
+    public Recipe(Long id, Date creationDate, String title) {
         this.id = id;
         this.creationDate = creationDate;
         this.title = title;
